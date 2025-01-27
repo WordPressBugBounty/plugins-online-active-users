@@ -5,7 +5,7 @@
  * Plugin URI: https://wordpress.org/plugins/online-active-users/
  * Description: WordPress Online Active Users plugin enables you to display how many users are currently online active and display user last seen on your Users page in the WordPress admin.
  * Tags: wp-online-active-users, users, active-users, online-user, available-users
- * Version: 2.4
+ * Version: 2.5
  * Author: Webizito
  * Author URI: http://webizito.com/
  * Contributors: valani9099
@@ -215,3 +215,63 @@ if ( ! class_exists( 'webi_active_user' ) ) {
     }
 }
 $myPlugin = new webi_active_user();
+
+if ( ! class_exists( 'Webi_Custom_Widget' ) ) {
+    class Webi_Custom_Widget extends WP_Widget {
+        
+        // Constructor
+        public function __construct() {
+            parent::__construct(
+                'webi_custom_widget',
+                __( 'WP Online Active User', 'text_domain' ),
+                array( 'description' => __( 'Display Online Active Users.', 'text_domain' ), )
+            );
+        }
+
+        // Front-end display
+        public function widget( $args, $instance ) {
+            echo $args['before_widget'];
+
+            // Title
+            if ( ! empty( $instance['title'] ) ) {
+                echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+            }
+
+            // Widget content
+            if ( class_exists( 'webi_active_user' ) ) {
+                $webi_plugin = new webi_active_user();
+                $active_users_count = $webi_plugin->webizito_online_users( 'count' );
+                echo '<div class="webi-widget-content">';
+                echo '<p>Online Active Users: <strong>' . $active_users_count . '</strong></p>';
+                echo '</div>';
+            } else {
+                echo '<p>Webi Active User plugin not found.</p>';
+            }
+
+            echo $args['after_widget'];
+        }
+
+        // Back-end widget form
+        public function form( $instance ) {
+            $title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Active Users', 'text_domain' );
+            ?>
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'text_domain' ); ?></label>
+                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+            </p>
+            <?php
+        }
+
+        // Save widget settings
+        public function update( $new_instance, $old_instance ) {
+            $instance = array();
+            $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+            return $instance;
+        }
+    }
+}
+
+// Register the custom widget
+add_action( 'widgets_init', function() {
+    register_widget( 'Webi_Custom_Widget' );
+} );
