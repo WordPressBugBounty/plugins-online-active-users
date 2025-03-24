@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: users, active-users, online users, WP Online users, available-users
 Requires at least: 6.3
 Tested up to: 6.7.1
-Stable tag: 2.5
+Stable tag: 2.6
 Requires PHP: 7.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -14,7 +14,7 @@ Plugin URI: https://wordpress.org/plugins/online-active-users/
 Author: Webizito
 Author URI: http://webizito.com/
 Text Domain: wp-online-active-users
-Version: 2.5
+Version: 2.6
 
 WP Online Active Users plugin enables you to display how many users are currently online active and display on your Users page in the WordPress admin.
 
