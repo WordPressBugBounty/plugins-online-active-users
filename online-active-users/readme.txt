@@ -3,8 +3,8 @@ Contributors: valani9099
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=APRNBJUZHRP7G
 Tags: users, active-users, online users, WP Online users, available-users
 Requires at least: 6.3
-Tested up to: 6.7.1
-Stable tag: 2.6
+Tested up to: 6.8
+Stable tag: 2.7
 Requires PHP: 7.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -14,7 +14,7 @@ Plugin URI: https://wordpress.org/plugins/online-active-users/
 Author: Webizito
 Author URI: http://webizito.com/
 Text Domain: wp-online-active-users
-Version: 2.6
+Version: 2.7
 
 WP Online Active Users plugin enables you to display how many users are currently online active and display on your Users page in the WordPress admin.
 
@@ -147,6 +147,9 @@ Thank you for considering a donation to support the development of WP Online Act
 = 2.5 =
 * Add Widget option
 
+= 2.6 =
+* Fix bug and Always show last seen
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -196,3 +199,6 @@ Thank you for considering a donation to support the development of WP Online Act
 
 = 2.5 =
 * Add Widget option.
+
+= 2.6 =
+* Bug fix and Always show last seen. Upgrade immediately.
