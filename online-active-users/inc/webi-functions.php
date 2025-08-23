@@ -51,25 +51,25 @@ class Wpoau_Active_Users {
         return ($last_seen && $last_seen > time() - 50);
     }
 
-    //Display Status in Users Page 
-    public function wpoau_user_columns_content($value = '', $column_name, $id) {
-        if ($column_name == 'status') {
-            if ($this->wpoau_is_user_online($id)) {
+    //Display Status in Users Page
+    public function wpoau_user_columns_content( $value, $column_name, $id ) {
+        if ( $column_name == 'status' ) {
+            if ( $this->wpoau_is_user_online( $id ) ) {
                 return '<span class="online-logged-in">●</span> <br /><small><em>Online Now</em></small>';
             } else {
-                $last_seen = get_user_meta($id, 'last_seen', true);
+                $last_seen = get_user_meta( $id, 'last_seen', true );
 
-                if (!$last_seen) {
+                if ( ! $last_seen ) {
                     $last_seen_text = "<small><em>Never Logged In</em></small>";
                     return '<span class="never-dot">●</span> <br />' . $last_seen_text;
                 } else {
-                    $last_seen_text = "<small>Last Seen: <br /><em class='webizito-last-seen' data-timestamp='{$last_seen}'>" . date('M j, Y @ g:ia', $last_seen) . "</em></small>";
+                    $last_seen_text = "<small>Last Seen: <br /><em class='webizito-last-seen' data-timestamp='{$last_seen}'>" . date( 'M j, Y @ g:ia', $last_seen ) . "</em></small>";
                     return '<span class="offline-dot">●</span> <br />' . $last_seen_text;
                 }
-
-                
             }
         }
+        
+        return $value;
     }
 
     // Always update last seen

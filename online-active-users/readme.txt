@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: online users, active-users, woocommerce-users, WP Online users, user-status
 Requires at least: 6.3
 Tested up to: 6.8
-Stable tag: 2.9
+Stable tag: 3.0
 Requires PHP: 7.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -14,7 +14,7 @@ Plugin URI: https://wordpress.org/plugins/online-active-users/
 Author: Webizito
 Author URI: http://webizito.com/
 Text Domain: wp-online-active-users
-Version: 2.9
+Version: 3.0
 
 WP Online Active Users is a lightweight, powerful plugin to monitor and display how many users are currently online active on your WordPress website.
 
@@ -169,6 +169,9 @@ We are committed to providing ongoing updates and new features based on user fee
 = 2.9 =
 * Update User online list table with show user info and Fix bug
 
+= 3.0 =
+* Fixed Deprecated id issue.
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -230,3 +233,6 @@ We are committed to providing ongoing updates and new features based on user fee
 
 = 2.9 =
 * Update User online list table with show user info and Bug fixed. Upgrade immediately.
+
+= 3.0 =
+* Fixed Deprecated id issue. Upgrade immediately.
