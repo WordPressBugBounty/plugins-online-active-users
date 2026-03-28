@@ -18,6 +18,9 @@
     font-size: 30px !important;
     top: -9px;
 }
+#wpadminbar .ab-icon.online-logged-in{
+    color: #4CBB17 !important;
+}
 .webi-active-users{
     width: 30%;
     max-width: 100%;

@@ -4,8 +4,8 @@
  * Plugin Title: Online Active Users Plugin
  * Plugin URI: https://wordpress.org/plugins/online-active-users/
  * Description: Monitor and display real-time online users and last seen status on your WordPress site with WP Online Active Users plugin.
- * Tags: wp-online-active-users, online-user, active-users, woocommerce-users, user-status
- * Version: 3.1
+ * Tags: online users, active users, online active users, real-time users, user activity
+ * Version: 3.2
  * Author: Webizito
  * Author URI: http://webizito.com/
  * Contributors: valani9099
